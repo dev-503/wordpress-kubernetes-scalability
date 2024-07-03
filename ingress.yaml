@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: myapp
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: hassan.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: wordpress
+            port:
+              number: 31700
+        path: "/"
+        pathType: Prefix

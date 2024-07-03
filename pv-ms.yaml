@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+ name: ms-pv
+ labels:
+   app: mysql
+spec:
+ capacity:
+  storage: 2Gi
+ accessModes:
+  - ReadWriteOnce
+ storageClassName: ""
+ nfs:
+  path: /nfs
+  server: 192.168.16.140
+
